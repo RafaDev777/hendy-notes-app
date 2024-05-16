@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>My Simple Notes App</h1>
+    </header>
+    <main>
+      <add-new-note></add-new-note>
+      <search-bar></search-bar>
+      <notes-list></notes-list>
+      <div class="container">
+        <div id="loading" class="loading" onClick="hideSpinner()">
+          Loading&#8230;
+        </div>
+        <input
+          type="button"
+          value="save"
+          id="saveBtn"
+          onClick="showSpinner()"
+        />
+      </div>
+    </main>
+  </body>
+</html>
