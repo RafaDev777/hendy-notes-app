@@ -25,7 +25,7 @@ class noteList extends HTMLElement {
 
   async deleteNote(id) {
     try {
-      this.notes = await this.apiSErvice.deleteNote(id);
+      this.notes = await this.apiService.deleteNote(id);
     } catch (error) {
       console.error("Error deleting note", error);
     }
