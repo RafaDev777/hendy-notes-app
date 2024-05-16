@@ -23,6 +23,14 @@ class noteList extends HTMLElement {
     }
   }
 
+  async deleteNote(id) {
+    try {
+      this.notes = await this.apiSErvice.deleteNote(id);
+    } catch (error) {
+      console.error("Error deleting note", error);
+    }
+  }
+
   renderNote() {
     const notesContainer = document.createElement("div");
     notesContainer.id = "notes-container";
@@ -33,6 +41,7 @@ class noteList extends HTMLElement {
                 <div class="note-content">
                     <h2>${note.title}</h2>
                     <p>${note.body}</p>
+                  <button onClick="()=>deleteNote(${note.id})" >Delete</button>
                 </div>
             `;
       notesContainer.appendChild(noteElement);
